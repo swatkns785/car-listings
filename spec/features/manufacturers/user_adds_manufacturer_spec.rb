@@ -48,6 +48,16 @@ So that I can keep track of the types of cars found in the lot
 
     end
 
+    scenario "user leaves fields blank" do
+
+      visit new_manufacturer_path
+      click_button "Submit"
+
+      expect(page).to have_content "Name can't be blank"
+      expect(page).to have_content "Country can't be blank"
+
+    end
+
   end
 
 end
