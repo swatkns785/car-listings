@@ -1,0 +1,13 @@
+<div>
+  <%= link_to "Add Manufacturer", new_manufacturer_path %>
+</div>
+
+<h2>All of the Manufacturers</h2>
+
+<% @manufacturers.each do |man| %>
+  <ul>
+    <li>
+      <%= man.name %>
+    </li>
+  </ul>
+<% end %>

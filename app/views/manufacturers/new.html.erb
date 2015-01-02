@@ -1,0 +1,19 @@
+<h2>Fill in the form below to add a manufacturer!</h2>
+
+<%= form_for @manufacturer do |f| %>
+
+<div>
+  <%= f.label :name, "Manufacturer Name" %>
+  <%= f.text_field :name %>
+</div>
+
+<div>
+  <%= f.label :country, "Country of Origin" %>
+  <%= f.text_field :country %>
+</div>
+
+<p>
+  <%= f.submit "Submit" %>
+</p>
+
+<% end %>

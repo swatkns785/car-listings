@@ -24,6 +24,7 @@ So that I can keep track of the types of cars found in the lot
     fill_in "Country of Origin", with: manufacturer.country
     click_button "Submit"
 
+    expect(page).to have_content "You have successfully added a manufacturer to the database."
     expect(page).to have_content "All of the Manufacturers"
     expect(page).to have_content manufacturer.name
 
