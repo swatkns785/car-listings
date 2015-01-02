@@ -13,7 +13,6 @@ class ManufacturersController < ApplicationController
       flash[:notice] = "You have successfully added a manufacturer to the database."
       redirect_to root_path
     else
-      flash[:alert] = "Please fill out the forms correctly."
       render :new
     end
   end
