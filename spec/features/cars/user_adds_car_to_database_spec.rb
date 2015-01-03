@@ -56,7 +56,7 @@ Acceptance Criteria:
 
   end
 
-  scenario "a user tries to non-integers into the mileage field" do
+  scenario "a user tries to add non-integers into the mileage field" do
 
     car = FactoryGirl.create(:car)
 
@@ -70,6 +70,19 @@ Acceptance Criteria:
     click_button "Submit"
 
     expect(page).to have_content "The mileage field must only include integers."
+
+  end
+
+  scenario "a user leaves all fields blank" do
+
+    visit new_car_path
+
+    click_button "Submit"
+
+    expect(page).to have_content "Make can't be blank"
+    expect(page).to have_content "Color can't be blank"
+    expect(page).to have_content "Year can't be blank"
+    expect(page).to have_content "Mileage can't be blank"
 
   end
 
