@@ -10,7 +10,7 @@ FactoryGirl.define do
   factory :car do
     make "Honda"
     color "blue"
-    year "1998"
+    year 1998
     mileage 108252
     description "A car for the common man."
   end

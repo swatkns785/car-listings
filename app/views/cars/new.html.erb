@@ -1,3 +1,10 @@
+<% if @car.errors.any? %>
+  <% @car.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+<% end %>
+
+
 <h2>Fill in the form below to add a car!</h2>
 
 <%= form_for @car do |f| %>
