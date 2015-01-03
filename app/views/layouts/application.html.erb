@@ -9,7 +9,11 @@
 <body>
 
   <nav>
-    <li><%= link_to "Add Vehicle", new_car_path %>
+    <li><%= link_to "Add Vehicle", new_car_path %></li>
+    <li><%= link_to "List of Cars", cars_path %></li>
+    <li>&nbsp;</li>
+    <li><%= link_to "Add Manufacturer", new_manufacturer_path %></li>
+    <li><%= link_to "List of Cars", manufacturers_path %></li>
   </nav>
 
   <% flash.each do |type, message| %>

@@ -10,7 +10,7 @@ Acceptance Criteria:
 [x] Only years from 1920 and above can be specified.
 [x] I can optionally specify a description of the car.
 [x] If I enter all of the required information in the required formats, the car is recorded and I am presented with a notification of success.
-[ ] If I do not specify all of the required information in the required formats, the car is not recorded and I am presented with errors.
+[x] If I do not specify all of the required information in the required formats, the car is not recorded and I am presented with errors.
 [x] Upon successfully creating a car, I am redirected back to the index of cars.
 
 ) do
