@@ -8,6 +8,10 @@
 </head>
 <body>
 
+  <nav>
+    <li><%= link_to "Add Vehicle", new_car_path %>
+  </nav>
+
   <% flash.each do |type, message| %>
   <div class="flash flash-<%= type %>">
     <%= message %>

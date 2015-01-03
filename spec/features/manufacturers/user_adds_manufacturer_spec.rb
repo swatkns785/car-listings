@@ -1,12 +1,12 @@
 require "rails_helper"
 
-feature "a user adds a manufacturer to databse", %q(
+feature "a user adds a manufacturer to database", %q(
 As a car salesperson
 I want to record a car manufacturer
 So that I can keep track of the types of cars found in the lot
 
-[ ] I must specify a manufacturer name and country.
-[ ] If I do not specify the required information, I am presented with errors.
+[x] I must specify a manufacturer name and country.
+[x] If I do not specify the required information, I am presented with errors.
 [x] If I specify the required information, the manufacturer is recorded and I am redirected to the index of manufacturers.
 
 ) do

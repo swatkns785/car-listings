@@ -1,4 +1,5 @@
 class Manufacturer < ActiveRecord::Base
+  has_many :cars
 
   validates :name,
     presence: true,
@@ -6,5 +7,4 @@ class Manufacturer < ActiveRecord::Base
 
   validates :country,
     presence: true
-
 end
