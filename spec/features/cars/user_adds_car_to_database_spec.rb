@@ -56,4 +56,21 @@ Acceptance Criteria:
 
   end
 
+  scenario "a user tries to non-integers into the mileage field" do
+
+    car = FactoryGirl.create(:car)
+
+    visit new_car_path
+
+    fill_in "Make", with: car.make
+    fill_in "Mileage", with: "This is a string"
+    fill_in "Year", with: car.year
+    fill_in "Color", with: car.color
+    fill_in "Description", with: car.description
+    click_button "Submit"
+
+    expect(page).to have_content "The mileage field must only include integers."
+
+  end
+
 end

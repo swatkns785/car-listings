@@ -8,7 +8,8 @@ class Car < ActiveRecord::Base
     presence: true
 
   validates :mileage,
-    presence: true
+    presence: true,
+    numericality: { only_integer: true, message: "The mileage field must only include integers." }
 
   validates :year,
     presence: true,
