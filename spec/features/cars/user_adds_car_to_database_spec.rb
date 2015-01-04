@@ -17,22 +17,25 @@ Acceptance Criteria:
 
   scenario "a user successfully adds a car to the database, meeting all acceptance criteria" do
 
-    car = FactoryGirl.create(:car)
+    manufacturer = FactoryGirl.create(:manufacturer)
+    car = FactoryGirl.create(:car, manufacturer_id: manufacturer.id)
 
     visit root_path
     click_link "Add Vehicle"
 
     expect(page).to have_content "Fill in the form below to add a car!"
-    fill_in "Make", with: car.make
+
+    select manufacturer.name, from: "Manufacturer"
     fill_in "Mileage", with: car.mileage
     fill_in "Year", with: car.year
     fill_in "Color", with: car.color
     fill_in "Description", with: car.description
+
     click_button "Submit"
 
     expect(page).to have_content "Your vehicle has been added."
     expect(page).to have_content "All of the Cars"
-    expect(page).to have_content car.make
+    expect(page).to have_content manufacturer.name
     expect(page).to have_content car.mileage
     expect(page).to have_content car.year
     expect(page).to have_content car.color
@@ -41,11 +44,12 @@ Acceptance Criteria:
 
   scenario "a user tries to enter a year before 1920" do
 
-    car = FactoryGirl.create(:car)
+    manufacturer = FactoryGirl.create(:manufacturer)
+    car = FactoryGirl.create(:car, manufacturer_id: manufacturer.id)
 
     visit new_car_path
 
-    fill_in "Make", with: car.make
+    select manufacturer.name, from: "Manufacturer"
     fill_in "Mileage", with: car.mileage
     fill_in "Year", with: 1914
     fill_in "Color", with: car.color
@@ -58,11 +62,12 @@ Acceptance Criteria:
 
   scenario "a user tries to add non-integers into the mileage field" do
 
-    car = FactoryGirl.create(:car)
+    manufacturer = FactoryGirl.create(:manufacturer)
+    car = FactoryGirl.create(:car, manufacturer_id: manufacturer.id)
 
     visit new_car_path
 
-    fill_in "Make", with: car.make
+    select manufacturer.name, from: "Manufacturer"
     fill_in "Mileage", with: "This is a string"
     fill_in "Year", with: car.year
     fill_in "Color", with: car.color
@@ -79,7 +84,7 @@ Acceptance Criteria:
 
     click_button "Submit"
 
-    expect(page).to have_content "Make can't be blank"
+    expect(page).to have_content "Manufacturer can't be blank"
     expect(page).to have_content "Color can't be blank"
     expect(page).to have_content "Year can't be blank"
     expect(page).to have_content "Mileage can't be blank"

@@ -1,7 +1,7 @@
 class Car < ActiveRecord::Base
   belongs_to :manufacturer
 
-  validates :make,
+  validates :manufacturer_id,
     presence: true
 
   validates :color,

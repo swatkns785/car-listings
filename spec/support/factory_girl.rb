@@ -8,7 +8,6 @@ FactoryGirl.define do
   end
 
   factory :car do
-    make "Honda"
     color "blue"
     year 1998
     mileage 108252
